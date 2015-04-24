@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -41,27 +41,63 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write('\r');
+      out.write('\n');
+
+response.setHeader("Content-Type","text/html; charset=windows-1252");
+response.setHeader("Pragma","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setHeader("Cache-Control", "must-revalidate");
+response.setHeader("Cache-Control","no-cache");
+    
+    HttpSession actual =request.getSession(true);
+    String id = actual.getId();
+    String nombre = (String)actual.getAttribute("Logueado");
+    
+    if(actual.isNew()){
+        response.sendRedirect("Login.jsp");
+        return;
+    }
+    
+    if(actual == null)
+    {
+        response.sendRedirect("Login.jsp");
+    }
+    else
+    {
+        if(actual.getAttribute("Logueado")==null){
+            response.sendRedirect("Login.jsp");
+        }
+    }
+
       out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html>\r\n");
       out.write("    <head>\r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
-      out.write("        <title>Login</title>\r\n");
+      out.write("        <title>JSP Page</title>\r\n");
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
-      out.write("    <center>\r\n");
-      out.write("        <h1>Inicio de Sesion</h1>\r\n");
-      out.write("        <form action=\"ControlLogin\" method=\"POST\">\r\n");
-      out.write("            <label for=\"txtUsuario\">Usuario</label>\r\n");
-      out.write("            <input type=\"text\" id=\"txtUsuario\" name=\"txtUsuario\" required><br><br>\r\n");
-      out.write("            \r\n");
-      out.write("            <label for=\"txtContrasenia\">Password</label>\r\n");
-      out.write("            <input type=\"password\" id=\"txtContrasenia\" name=\"txtContrasenia\" required><br><br>\r\n");
-      out.write("            \r\n");
-      out.write("            <input type=\"submit\" id=\"btnSubmit\" value=\"Ingresar\">\r\n");
-      out.write("        </form>      \r\n");
-      out.write("        \r\n");
-      out.write("    </center>\r\n");
+      out.write("        <h3>Usuarios</h3>\r\n");
+      out.write("        <ul>\r\n");
+      out.write("            <li>\r\n");
+      out.write("                <a href=\"ControlTUsuarioRegistrar\">Registrar Usuario</a>\r\n");
+      out.write("            </li>\r\n");
+      out.write("            <li>\r\n");
+      out.write("                <a href=\"ControlTUsuarioMostrar\">Mostrar Usuario</a>\r\n");
+      out.write("            </li>\r\n");
+      out.write("        </ul>\r\n");
+      out.write("        <h3>Tipos de Usuario</h3>\r\n");
+      out.write("        <ul>\r\n");
+      out.write("            <li>\r\n");
+      out.write("                <a href=\"ServletTipoUsuarioInsert\">Registrar Tipo Usuario </a>\r\n");
+      out.write("            </li>\r\n");
+      out.write("            <li>\r\n");
+      out.write("                <a href=\"ServletTipoUsuarioRead\">Mostrar Tipos Usuario</a>\r\n");
+      out.write("            </li>\r\n");
+      out.write("        </ul>\r\n");
+      out.write("        <br>\r\n");
+      out.write("        <a href=\"Logout.jsp\">Cerrar Sesion</a>\r\n");
       out.write("    </body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {

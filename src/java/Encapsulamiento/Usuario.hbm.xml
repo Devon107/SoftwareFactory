@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 04-15-2015 08:45:36 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Encapsulamiento.Usuario" table="usuario" catalog="proyecto" optimistic-lock="version">
+        <id name="idUsuario" type="string">
+            <column name="IdUsuario" length="10" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="tipousuario" class="Encapsulamiento.Tipousuario" fetch="select">
+            <column name="IdTipoUsuario" length="5" not-null="true" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="Nombre" length="75" not-null="true" />
+        </property>
+        <property name="apellido1" type="string">
+            <column name="Apellido1" length="40" not-null="true" />
+        </property>
+        <property name="apellido2" type="string">
+            <column name="Apellido2" length="40" not-null="true" />
+        </property>
+        <property name="contrasenia" type="binary">
+            <column name="Contrasenia" not-null="true" />
+        </property>
+        <property name="estado" type="string">
+            <column name="Estado" length="5" not-null="true" />
+        </property>
+        <property name="correoElectronico" type="string">
+            <column name="CorreoElectronico" length="50" not-null="true" />
+        </property>
+        <property name="telefono" type="string">
+            <column name="Telefono" length="10" not-null="true" />
+        </property>
+        <set name="sistemas" table="sistema" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IdUsuario" length="10" not-null="true" />
+            </key>
+            <one-to-many class="Encapsulamiento.Sistema" />
+        </set>
+        <set name="bitacoras" table="bitacora" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IdUsuario" length="10" not-null="true" />
+            </key>
+            <one-to-many class="Encapsulamiento.Bitacora" />
+        </set>
+    </class>
+</hibernate-mapping>

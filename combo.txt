@@ -1,0 +1,7 @@
+<jsp:useBean id="negociotipousuario" scope="request" class="Negocio.NegocioTipoUsuario" />
+            <label for="txtTipoUsuario">Tipo de Usuario</label>            
+            <select id="cmbTipoUsuario" name="cmbTipoUsuario">
+                <c:forEach var="item" items="${negociotipousuario.listaTipoUsuario}">
+                    <option value="${item.getIdTipoUsuario()}">${item.getDescripcion()}</option>
+                </c:forEach>
+            </select><br>

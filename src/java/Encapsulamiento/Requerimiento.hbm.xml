@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 04-15-2015 08:45:36 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Encapsulamiento.Requerimiento" table="requerimiento" catalog="proyecto" optimistic-lock="version">
+        <id name="idRequerimiento" type="string">
+            <column name="IdRequerimiento" length="10" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="tiporequerimiento" class="Encapsulamiento.Tiporequerimiento" fetch="select">
+            <column name="IdTipoRequerimiento" length="5" not-null="true" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="Nombre" length="50" not-null="true" />
+        </property>
+        <property name="costo" type="big_decimal">
+            <column name="Costo" precision="10" not-null="true" />
+        </property>
+        <property name="horasHombre" type="int">
+            <column name="HorasHombre" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="Descripcion" length="100" not-null="true" />
+        </property>
+        <set name="detallesistemas" table="detallesistema" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IdRequerimiento" length="10" not-null="true" />
+            </key>
+            <one-to-many class="Encapsulamiento.Detallesistema" />
+        </set>
+    </class>
+</hibernate-mapping>

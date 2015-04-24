@@ -1,0 +1,4 @@
+EJB - Negocio
+Servlets - Controles
+DAO - Datos
+POJO - Encapsulamiento

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 04-15-2015 08:45:36 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Encapsulamiento.Detallesistema" table="detallesistema" catalog="proyecto" optimistic-lock="version">
+        <id name="idDetalleSistema" type="string">
+            <column name="IdDetalleSistema" length="10" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="requerimiento" class="Encapsulamiento.Requerimiento" fetch="select">
+            <column name="IdRequerimiento" length="10" not-null="true" />
+        </many-to-one>
+        <many-to-one name="responsable" class="Encapsulamiento.Responsable" fetch="select">
+            <column name="IdResponsable" length="10" not-null="true" />
+        </many-to-one>
+        <many-to-one name="sistema" class="Encapsulamiento.Sistema" fetch="select">
+            <column name="IdSistema" length="10" not-null="true" />
+        </many-to-one>
+        <property name="estadoRequerimiento" type="string">
+            <column name="EstadoRequerimiento" length="5" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

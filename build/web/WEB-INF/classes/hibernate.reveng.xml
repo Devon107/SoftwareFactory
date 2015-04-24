@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="proyecto"/>
+  <table-filter match-name="detallesistema"/>
+  <table-filter match-name="tipousuario"/>
+  <table-filter match-name="tiporequerimiento"/>
+  <table-filter match-name="usuario"/>
+  <table-filter match-name="sistema"/>
+  <table-filter match-name="requerimiento"/>
+  <table-filter match-name="bitacora"/>
+  <table-filter match-name="responsable"/>
+</hibernate-reverse-engineering>

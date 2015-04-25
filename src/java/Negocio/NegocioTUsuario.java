@@ -18,6 +18,7 @@ import javax.ejb.Stateless;
 public class NegocioTUsuario {
 
     private Usuario usuario;
+    private String cantidadDatos;
     private List<Usuario> listaUsuario;
     private final DatosTUsuario datosTUsuario;
     
@@ -97,6 +98,20 @@ public class NegocioTUsuario {
         }
     }
     
+    public boolean GetCantidad()
+    {
+        try 
+        {
+            cantidadDatos = datosTUsuario.GetCantidad();
+            return true;
+        } 
+        catch (Exception e) 
+        {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+    
     public boolean Login()
     {
         try 
@@ -117,6 +132,14 @@ public class NegocioTUsuario {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+    
+    public String getCantidadDatos() {
+        return cantidadDatos;
+    }
+
+    public void setCantidadDatos(String cantidadDatos) {
+        this.cantidadDatos = cantidadDatos;
     }
 
     public List<Usuario> getListaUsuario() {

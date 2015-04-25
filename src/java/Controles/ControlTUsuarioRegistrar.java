@@ -45,16 +45,24 @@ public class ControlTUsuarioRegistrar extends HttpServlet {
         if(request.getMethod().equals("POST"))
         {
             Tipousuario tipoUsuario = new Tipousuario();
-            tipoUsuario.setIdTipoUsuario(request.getParameter("cmbTipoUsuario"));
-                        
+            tipoUsuario.setIdTipoUsuario(request.getParameter("cmbTipoUsuario"));                        
            
             String id = String.valueOf(request.getParameter("txtApellido1").charAt(0));
             id = id + String.valueOf(request.getParameter("txtApellido2").charAt(0));
             id = id.toUpperCase();
-            Date now = new Date();
-            String dateString = now.toString();            
+            Date now = new Date();                        
             SimpleDateFormat format = new SimpleDateFormat("yy");            
             id = id + format.format(now);
+            
+            negocioTUsuario.GetCantidad();
+            
+            String cantidad = negocioTUsuario.getCantidadDatos();
+            
+            while(cantidad.length() < 4)
+            {
+                cantidad = "0" + cantidad;
+            }
+            id = id + cantidad;            
             
             negocioTUsuario.getUsuario().setIdUsuario(id);
             negocioTUsuario.getUsuario().setNombre(request.getParameter("txtNombre"));

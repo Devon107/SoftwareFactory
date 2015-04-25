@@ -18,4 +18,5 @@ public interface InterfaceTipoUsuario {
     public Tipousuario getByIdTipoUsuario(String IdTipoUsuario) throws Exception;
     public boolean delete(Tipousuario tipousuario ) throws Exception;
     public boolean update(Tipousuario tipousuario ) throws Exception;
+    public String GetCantidad() throws Exception;    
 }

@@ -7,7 +7,7 @@ package Datos;
 
 import Encapsulamiento.Usuario;
 import HibernateUtil.HibernateUtil;
-import Interface.InterfaceDatosTPersona;
+import Interface.InterfaceDatosTUsuario;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -17,7 +17,7 @@ import org.hibernate.Transaction;
  *
  * @author Montano
  */
-public class DatosTUsuario implements InterfaceDatosTPersona{
+public class DatosTUsuario implements InterfaceDatosTUsuario{
 
     Session sesion;
     
@@ -86,6 +86,17 @@ public class DatosTUsuario implements InterfaceDatosTPersona{
         transaction.commit();
         sesion.close();
         return usuario;
+    }
+    
+    @Override
+    public String GetCantidad() throws Exception {
+        sesion=HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction= sesion.beginTransaction();
+        Query query=sesion.createQuery("select count(U)+1 From Usuario U");
+        String cantidad = String.valueOf(query.uniqueResult());
+        transaction.commit();
+        sesion.close();
+        return cantidad;
     }
     
 }

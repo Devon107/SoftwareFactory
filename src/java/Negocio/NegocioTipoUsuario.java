@@ -18,6 +18,7 @@ import javax.ejb.Stateless;
 @Stateless
 public class NegocioTipoUsuario {
     private Tipousuario tipousuario;
+    private String cantidadDatos;
     private List<Tipousuario> listaTipoUsuario;
     private final DatosTipoUsuario datatipousuario;
     
@@ -62,6 +63,21 @@ public class NegocioTipoUsuario {
             return false;
         }
     }
+    
+    public boolean GetCantidad()
+    {
+        try 
+        {
+            cantidadDatos = datatipousuario.GetCantidad();
+            return true;
+        } 
+        catch (Exception e) 
+        {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+    
     public boolean getByIdTipoUsuario(){
         try{
             tipousuario= datatipousuario.getByIdTipoUsuario(tipousuario.getIdTipoUsuario());
@@ -77,6 +93,14 @@ public class NegocioTipoUsuario {
 
     public void setTipousuario(Tipousuario tipousuario) {
         this.tipousuario = tipousuario;
+    }
+    
+    public String getCantidadDatos() {
+        return cantidadDatos;
+    }
+
+    public void setCantidadDatos(String cantidadDatos) {
+        this.cantidadDatos = cantidadDatos;
     }
 
     public List<Tipousuario> getListaTipoUsuario() {

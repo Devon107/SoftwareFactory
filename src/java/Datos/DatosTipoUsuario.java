@@ -69,4 +69,15 @@ public class DatosTipoUsuario implements InterfaceTipoUsuario  {
         return true;
     }
     
+    @Override
+    public String GetCantidad() throws Exception {
+        session=HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction= session.beginTransaction();
+        Query query=session.createQuery("select count(TU)+1 From Tipousuario TU");
+        String cantidad = String.valueOf(query.uniqueResult());
+        transaction.commit();
+        session.close();
+        return cantidad;
+    }
+    
 }

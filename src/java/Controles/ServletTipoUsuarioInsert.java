@@ -41,9 +41,20 @@ public class ServletTipoUsuarioInsert extends HttpServlet {
         if(request.getMethod().equals("POST")){
             
             String id = String.valueOf(request.getParameter("txtDescripcion").charAt(0));
-            id = id + String.valueOf(request.getParameter("txtDescripcion").charAt(1));                
+            id = id + String.valueOf(request.getParameter("txtDescripcion").charAt(1));
             
             negociotipousuario= new NegocioTipoUsuario();
+            
+            negociotipousuario.GetCantidad();
+            
+            String cantidad = negociotipousuario.getCantidadDatos();
+            
+            while(cantidad.length() < 3)
+            {
+                cantidad = "0" + cantidad;
+            }
+            id = id + cantidad;            
+            
             negociotipousuario.getTipousuario().setIdTipoUsuario(id.toUpperCase());
             negociotipousuario.getTipousuario().setDescripcion(request.getParameter("txtDescripcion"));
             

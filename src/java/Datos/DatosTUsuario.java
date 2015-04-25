@@ -7,7 +7,7 @@ package Datos;
 
 import Encapsulamiento.Usuario;
 import HibernateUtil.HibernateUtil;
-import Interface.InterfaceDatosTUsuario;
+import Interface.InterfaceDatosTPersona;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -17,7 +17,7 @@ import org.hibernate.Transaction;
  *
  * @author Montano
  */
-public class DatosTUsuario implements InterfaceDatosTUsuario{
+public class DatosTUsuario implements InterfaceDatosTPersona{
 
     Session sesion;
     

@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author Montano
  */
-public interface InterfaceDatosTUsuario {
+public interface InterfaceDatosTPersona {
     public boolean Registrar(Usuario usuario) throws Exception;
     public List<Usuario> GetAll() throws Exception;
     public Usuario GetById(String id) throws Exception;

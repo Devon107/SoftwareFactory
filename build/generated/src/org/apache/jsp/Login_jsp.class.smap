@@ -5,6 +5,10 @@ JSP
 *F
 + 0 Login.jsp
 Login.jsp
++ 1 footer.jsp
+footer.jsp
 *L
-1,24:44
+1,15:49
+1#1,2:63
+15#0:65,2
 *E

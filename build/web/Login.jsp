@@ -1,9 +1,14 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login</title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" >
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" >
+        <!-- JS -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/validaciones.js"></script>
+        <title>JSP Page</title>
     </head>
     <body>
     <center>
@@ -15,9 +20,8 @@
             <label for="txtContrasenia">Password</label>
             <input type="password" id="txtContrasenia" name="txtContrasenia" required><br><br>
             
-            <input type="submit" id="btnSubmit" value="Ingresar">
+            <input type="submit" id="btnSubmit" value="Ingresar" class="btn btn-default">
         </form>      
         
     </center>
-    </body>
-</html>
+<%@include file="footer.jsp" %>

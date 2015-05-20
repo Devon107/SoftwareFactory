@@ -22,13 +22,12 @@
                 <td>${item.getCosto()}</td>
                 <td>${item.getHorasHombre()}</td>
                 <td>${item.getDescripcion()}</td>
-                <td><input id="${item.getIdRequerimiento()}" type="button" value="Agregar" onclick="agregarRequerimiento(this.id)"></td>                
+                <td><input id="${item.getIdRequerimiento()}" type="button" value="Agregar" onclick="agregarRequerimiento(this.id)" class="btn btn-primary"></td>                
             </tr>
         </c:forEach>
     </tbody>
 </table>
 <br><br>
-        <a href="Index.jsp">Regresar al Menu</a> 
   <script>
         function agregarRequerimiento(id){
             window.location.href="ServletRequerimientoUpdate?id="+id;

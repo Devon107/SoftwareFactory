@@ -26,9 +26,7 @@
             <label for="txtTelefono">Telefono</label>
             <input type="text" id="txtTelefono" name="txtTelefono" value="${negocioTUsuario.usuario.telefono}"><br>
             
-            <input type="submit" value="Actualizar Usuario">
-        </form>
-        <br><br>        
-        <a href="Index.jsp">Regresar al Menu</a> 
+            <input type="submit" value="Actualizar Usuario" class="btn btn-primary">
+            </form>
         <%@include file="footer.jsp" %>
 

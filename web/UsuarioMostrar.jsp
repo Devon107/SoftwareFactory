@@ -1,8 +1,11 @@
 <%@include file="header.jsp" %>
 
         <jsp:useBean id="negocioTUsuario" scope="request" class="Negocio.NegocioTUsuario" />
-        <h1>Lista de Usuarios</h1>
-        <table class="table">
+        <div class="row">
+            <h1 class="form-signin-heading" align="center" >Lista de Usuarios</h1>
+        <div class="col-md-5">
+        
+        <table class="table table-striped">
             <thead>
                 <th>Usuario</th>                
                 <th>Nombre</th>
@@ -21,17 +24,17 @@
                         <td>${item.getNombre()}</td>
                         <td>${item.getApellido1()}</td>
                         <td>${item.getApellido2()}</td>
-                        <td>${item.getTipousuario().getDescripcion()}</td>
+                        <td>${item.getTipousuario().getIdTipoUsuario()}</td>
                         <td>${item.getCorreoElectronico()}</td>
                         <td>${item.getTelefono()}</td>
-                        <td><input id="${item.getIdUsuario()}" type="button" onclick="editarUsuario(this.id);" value="Editar"></td>
-                        <td><input id="${item.getIdUsuario()}" type="button" onclick="eliminarUsuario(this.id);" value="Eliminar"></td>
+                        <td><input id="${item.getIdUsuario()}" type="button" onclick="editarUsuario(this.id);" value="Editar" class="btn btn-primary"></td>
+                        <td><input id="${item.getIdUsuario()}" type="button" onclick="eliminarUsuario(this.id);" value="Eliminar" class="btn btn-primary"></td>
                     </tr>
                 </c:forEach>
             </tbody>
         </table>
-        <br><br>
-        <a href="Index.jsp">Regresar al Menu</a>
+            </div>
+            </div>
 
     <script>
         function editarUsuario(id)

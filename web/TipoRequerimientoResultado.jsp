@@ -1,4 +1,5 @@
-
+<%@include file="header.jsp" %>
+<br><br> <br><br> 
         <%
             if(request.getAttribute("Resultado").equals("Correcto"))
             {%>
@@ -9,6 +10,5 @@
             <%}
         %>
         <br><br>
-        <a href="Index.jsp">Regresar al Menu</a> 
         <%@include file="footer.jsp" %>
 

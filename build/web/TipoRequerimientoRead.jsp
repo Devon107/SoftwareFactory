@@ -1,9 +1,14 @@
 <%@include file="header.jsp" %>
 
         <jsp:useBean id="negociotiporequerimiento" scope="request" class="Negocio.NegocioTipoRequerimiento" />
-        <h1>Lista de Tipo de Requerimiento</h1>
-        <table class="table">
+       <div class="row">
+            <h1 class="form-signin-heading" align="center">Lista de Tipo de Requerimiento</h1>
+        <div class="col-md-8">
+        
+        <table class="table table-striped">
+        
             <thead>
+                <th>Id</th>
                 <th>Descripcion</th>
                 <th></th>
                 <th></th>
@@ -12,16 +17,18 @@
                 
             <c:forEach var="item" items="${negociotiporequerimiento.listaTipoRequerimiento}">
                 <tr>
+                    <td>${item.getIdTipoRequerimiento()}</td>
                     <td>${item.getDescripcion()}</td>
-                    <td><input id="${item.getIdTipoRequerimiento()}" type="button" value="Editar" onclick="editarTipoRequerimiento(this.id)"></td>
-                    <td><input id="${item.getIdTipoRequerimiento()}" type="button" value="Eliminar" onclick="eliminarTipoRequerimiento(this.id)"></td>
+                    <td><input id="${item.getIdTipoRequerimiento()}" type="button" value="Editar" onclick="editarTipoRequerimiento(this.id)" class="btn btn-primary"></td>
+                    <td><input id="${item.getIdTipoRequerimiento()}" type="button" value="Eliminar" onclick="eliminarTipoRequerimiento(this.id)" class="btn btn-primary"></td>
                 </tr>
             </c:forEach>
                 
             </tbody>
         </table>
-        <br><br>
-        <a href="Index.jsp">Regresar al Menu</a> 
+            </div>
+            </div>
+        
     <script>
         function editarTipoRequerimiento(id){
             window.location.href="ServletTipoRequerimientoUpdate?id="+id;

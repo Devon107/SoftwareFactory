@@ -5,10 +5,9 @@
             <label for="txtDescripcion">Descripcion</label>
             <input type="text" id="txtDescripcion" name="txtDescripcion" required>
             
-            <input type="submit" value="Ingresar Tipo Requerimiento">
+            <input type="submit" value="Ingresar Tipo Requerimiento" class="btn btn-primary">
         </form>
         <br><br>
-        <a href="Index.jsp">Regresar al Menu</a> 
     </body>
 </html>
 <%@include file="footer.jsp" %>

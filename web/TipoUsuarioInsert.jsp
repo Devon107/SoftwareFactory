@@ -5,10 +5,8 @@
             <label for="txtDescripcion">Descripcion</label>
             <input type="text" id="txtDescripcion" name="txtDescripcion" pattern="^([A-Za-zñÑáéíóúÁÉÍÓÚ\s]{1,}){1,}$" required>
             
-            <input type="submit" value="Ingresar Tipo Usuario">
+            <input type="submit" value="Ingresar Tipo Usuario" class="btn btn-primary">
         </form>
-        <br><br>
-        <a href="Index.jsp">Regresar al Menu</a> 
     </body>
 </html>
 <%@include file="footer.jsp" %>

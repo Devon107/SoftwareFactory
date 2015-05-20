@@ -41,7 +41,5 @@
             <a href="ServletSistemaMenuInsert">Registrar Sistema </a>
         </li>
     </ul>
-    <br>
-    <a href="Logout.jsp">Cerrar Sesion</a>
 
     <%@include file="footer.jsp" %>

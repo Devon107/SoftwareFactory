@@ -38,4 +38,20 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="color"],
+textarea {
+height:30px;padding:5px 10px;font-size:12px;line-height:1.5;border-radius:3px
+}

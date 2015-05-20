@@ -28,7 +28,7 @@
                 <option value="${item.getIdTipoRequerimiento()}">${item.getDescripcion()}</option>
             </c:forEach>
                 </select><br>
-    <input type="submit" value="Actualizar Requerimiento"> 
+    <input type="submit" value="Actualizar Requerimiento" class="btn btn-primary"> 
         
 </form>
        

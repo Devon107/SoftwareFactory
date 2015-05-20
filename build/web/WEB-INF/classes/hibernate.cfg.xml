@@ -7,7 +7,7 @@
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/proyecto?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.show_sql">true</property>
-    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.enable_lazy_load_no_trans">true</property>    <property name="hibernate.current_session_context_class">thread</property>
     <mapping resource="Encapsulamiento/Sistema.hbm.xml"/>
     <mapping resource="Encapsulamiento/Responsable.hbm.xml"/>
     <mapping resource="Encapsulamiento/Requerimiento.hbm.xml"/>

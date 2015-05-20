@@ -26,6 +26,15 @@
             <a href="ServletTipoRequerimientoRead">Mostrar Tipos Requerimiento</a>
         </li>
     </ul>
+        <h3>Requerimiento</h3>
+    <ul>
+        <li>
+            <a href="ServletRequerimientoInsert">Registrar Requerimiento </a>
+        </li>
+        <li>
+            <a href="ServletRequerimientoRead">Mostrar Requerimientos</a>
+        </li>
+    </ul>
     <br>
     <a href="Logout.jsp">Cerrar Sesion</a>
 

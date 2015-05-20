@@ -35,6 +35,12 @@
             <a href="ServletRequerimientoRead">Mostrar Requerimientos</a>
         </li>
     </ul>
+        <h3>Sistemas</h3>
+    <ul>
+        <li>
+            <a href="ServletSistemaMenuInsert">Registrar Sistema </a>
+        </li>
+    </ul>
     <br>
     <a href="Logout.jsp">Cerrar Sesion</a>
 

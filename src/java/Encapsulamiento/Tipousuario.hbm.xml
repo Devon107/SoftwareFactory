@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 04-15-2015 08:45:36 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated 05-20-2015 03:06:20 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="Encapsulamiento.Tipousuario" table="tipousuario" catalog="proyecto" optimistic-lock="version">
         <id name="idTipoUsuario" type="string">
@@ -11,6 +11,12 @@
         <property name="descripcion" type="string">
             <column name="Descripcion" length="25" not-null="true" />
         </property>
+        <set name="detallepermisos" table="detallepermiso" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IdTipoUsuario" length="5" not-null="true" />
+            </key>
+            <one-to-many class="Encapsulamiento.Detallepermiso" />
+        </set>
         <set name="usuarios" table="usuario" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="IdTipoUsuario" length="5" not-null="true" />

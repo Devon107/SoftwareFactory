@@ -1,5 +1,5 @@
 package Encapsulamiento;
-// Generated 04-15-2015 08:45:35 AM by Hibernate Tools 4.3.1
+// Generated 05-20-2015 03:06:19 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -12,20 +12,20 @@ public class Responsable  implements java.io.Serializable {
 
 
      private String idResponsable;
-     private String idUsuario;
+     private Usuario usuario;
      private Set detallesistemas = new HashSet(0);
 
     public Responsable() {
     }
 
 	
-    public Responsable(String idResponsable, String idUsuario) {
+    public Responsable(String idResponsable, Usuario usuario) {
         this.idResponsable = idResponsable;
-        this.idUsuario = idUsuario;
+        this.usuario = usuario;
     }
-    public Responsable(String idResponsable, String idUsuario, Set detallesistemas) {
+    public Responsable(String idResponsable, Usuario usuario, Set detallesistemas) {
        this.idResponsable = idResponsable;
-       this.idUsuario = idUsuario;
+       this.usuario = usuario;
        this.detallesistemas = detallesistemas;
     }
    
@@ -36,12 +36,12 @@ public class Responsable  implements java.io.Serializable {
     public void setIdResponsable(String idResponsable) {
         this.idResponsable = idResponsable;
     }
-    public String getIdUsuario() {
-        return this.idUsuario;
+    public Usuario getUsuario() {
+        return this.usuario;
     }
     
-    public void setIdUsuario(String idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
     public Set getDetallesistemas() {
         return this.detallesistemas;

@@ -9,7 +9,6 @@
 <h1>Listar Requerimientos</h1>
 <table class="table">
     <thead>
-        <th> Id</th>
         <th> Tipo Requerimiento</th>
         <th> Nombre</th>
         <th> Costo</th>
@@ -20,8 +19,7 @@
     <tbody>
         <c:forEach var="item" items="${negociorequerimiento.listaRequerimiento}">
             <tr>
-                <td>${item.getIdRequerimiento()}</td>
-                <td>${item.getTiporequerimiento().getIdTipoRequerimiento()}</td>
+                <td>${item.getTiporequerimiento().getDescripcion()}</td>
                 <td>${item.getNombre()}</td>
                 <td>${item.getCosto()}</td>
                 <td>${item.getHorasHombre()}</td>
@@ -33,6 +31,8 @@
         </c:forEach>
     </tbody>
 </table>
+<br><br>
+        <a href="Index.jsp">Regresar al Menu</a> 
   <script>
         function editarRequerimiento(id){
             window.location.href="ServletRequerimientoUpdate?id="+id;

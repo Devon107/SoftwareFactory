@@ -1,5 +1,5 @@
 package Encapsulamiento;
-// Generated 04-15-2015 08:45:35 AM by Hibernate Tools 4.3.1
+// Generated 05-20-2015 03:06:19 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -14,6 +14,7 @@ public class Sistema  implements java.io.Serializable {
 
      private String idSistema;
      private Usuario usuario;
+     private String nombreSistema;
      private Date fecha;
      private String estadoSistema;
      private Set detallesistemas = new HashSet(0);
@@ -22,15 +23,17 @@ public class Sistema  implements java.io.Serializable {
     }
 
 	
-    public Sistema(String idSistema, Usuario usuario, Date fecha, String estadoSistema) {
+    public Sistema(String idSistema, Usuario usuario, String nombreSistema, Date fecha, String estadoSistema) {
         this.idSistema = idSistema;
         this.usuario = usuario;
+        this.nombreSistema = nombreSistema;
         this.fecha = fecha;
         this.estadoSistema = estadoSistema;
     }
-    public Sistema(String idSistema, Usuario usuario, Date fecha, String estadoSistema, Set detallesistemas) {
+    public Sistema(String idSistema, Usuario usuario, String nombreSistema, Date fecha, String estadoSistema, Set detallesistemas) {
        this.idSistema = idSistema;
        this.usuario = usuario;
+       this.nombreSistema = nombreSistema;
        this.fecha = fecha;
        this.estadoSistema = estadoSistema;
        this.detallesistemas = detallesistemas;
@@ -49,6 +52,13 @@ public class Sistema  implements java.io.Serializable {
     
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+    public String getNombreSistema() {
+        return this.nombreSistema;
+    }
+    
+    public void setNombreSistema(String nombreSistema) {
+        this.nombreSistema = nombreSistema;
     }
     public Date getFecha() {
         return this.fecha;

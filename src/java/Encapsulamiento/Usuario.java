@@ -1,5 +1,5 @@
 package Encapsulamiento;
-// Generated 04-15-2015 08:45:35 AM by Hibernate Tools 4.3.1
+// Generated 05-20-2015 03:06:19 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -20,6 +20,7 @@ public class Usuario  implements java.io.Serializable {
      private String estado;
      private String correoElectronico;
      private String telefono;
+     private Set responsables = new HashSet(0);
      private Set sistemas = new HashSet(0);
      private Set bitacoras = new HashSet(0);
 
@@ -38,7 +39,7 @@ public class Usuario  implements java.io.Serializable {
         this.correoElectronico = correoElectronico;
         this.telefono = telefono;
     }
-    public Usuario(String idUsuario, Tipousuario tipousuario, String nombre, String apellido1, String apellido2, byte[] contrasenia, String estado, String correoElectronico, String telefono, Set sistemas, Set bitacoras) {
+    public Usuario(String idUsuario, Tipousuario tipousuario, String nombre, String apellido1, String apellido2, byte[] contrasenia, String estado, String correoElectronico, String telefono, Set responsables, Set sistemas, Set bitacoras) {
        this.idUsuario = idUsuario;
        this.tipousuario = tipousuario;
        this.nombre = nombre;
@@ -48,6 +49,7 @@ public class Usuario  implements java.io.Serializable {
        this.estado = estado;
        this.correoElectronico = correoElectronico;
        this.telefono = telefono;
+       this.responsables = responsables;
        this.sistemas = sistemas;
        this.bitacoras = bitacoras;
     }
@@ -66,7 +68,6 @@ public class Usuario  implements java.io.Serializable {
     public void setTipousuario(Tipousuario tipousuario) {
         this.tipousuario = tipousuario;
     }
-    
     public String getNombre() {
         return this.nombre;
     }
@@ -115,6 +116,13 @@ public class Usuario  implements java.io.Serializable {
     
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+    public Set getResponsables() {
+        return this.responsables;
+    }
+    
+    public void setResponsables(Set responsables) {
+        this.responsables = responsables;
     }
     public Set getSistemas() {
         return this.sistemas;

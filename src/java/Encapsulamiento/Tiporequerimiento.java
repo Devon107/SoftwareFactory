@@ -1,5 +1,5 @@
 package Encapsulamiento;
-// Generated 04-15-2015 08:45:35 AM by Hibernate Tools 4.3.1
+// Generated 05-20-2015 03:06:19 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;

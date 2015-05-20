@@ -2,9 +2,8 @@
 
         <jsp:useBean id="negociotiporequerimiento" scope="request" class="Negocio.NegocioTipoRequerimiento" />
         <h1>Lista de Tipo de Requerimiento</h1>
-        <table border="1">
+        <table class="table">
             <thead>
-                <th>Id</th>
                 <th>Descripcion</th>
                 <th></th>
                 <th></th>
@@ -13,7 +12,6 @@
                 
             <c:forEach var="item" items="${negociotiporequerimiento.listaTipoRequerimiento}">
                 <tr>
-                    <td>${item.getIdTipoRequerimiento()}</td>
                     <td>${item.getDescripcion()}</td>
                     <td><input id="${item.getIdTipoRequerimiento()}" type="button" value="Editar" onclick="editarTipoRequerimiento(this.id)"></td>
                     <td><input id="${item.getIdTipoRequerimiento()}" type="button" value="Eliminar" onclick="eliminarTipoRequerimiento(this.id)"></td>

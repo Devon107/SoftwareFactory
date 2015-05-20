@@ -5,6 +5,7 @@
  */
 package Datos;
 import Encapsulamiento.Requerimiento;
+import Encapsulamiento.Tiporequerimiento;
 import HibernateUtil.HibernateUtil;
 import Interface.InterfaceRequerimientos;
 import java.util.List;
@@ -32,7 +33,7 @@ public class DatosRequerimiento implements InterfaceRequerimientos{
     public List<Requerimiento> GetAll() throws Exception {
         sesion = HibernateUtil.getSessionFactory().openSession();
         Transaction transaccion = sesion.beginTransaction();
-        Query query = sesion.createQuery("From Requerimiento");
+        Query query = sesion.createQuery("From Requerimiento as R inner join fetch R.tiporequerimiento");
         List<Requerimiento> listaRequerimientos = (List<Requerimiento>) query.list();
         transaccion.commit();
         sesion.close();
@@ -79,6 +80,18 @@ public class DatosRequerimiento implements InterfaceRequerimientos{
         transaction.commit();
         sesion.close();
         return cantidad;    
+    }
+    
+    @Override
+    public List<Requerimiento> GetType(Tiporequerimiento tipoRequerimeinto) throws Exception {
+        sesion = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaccion = sesion.beginTransaction();
+        Query query = sesion.createQuery("From Requerimiento as R where R.tiporequerimiento=:id");
+        query.setParameter("id", tipoRequerimeinto);
+        List<Requerimiento> listaRequerimientos = (List<Requerimiento>) query.list();
+        transaccion.commit();
+        sesion.close();
+        return listaRequerimientos;
     }
     
 }

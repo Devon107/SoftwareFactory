@@ -5,6 +5,7 @@
  */
 package Interface;
 import Encapsulamiento.Requerimiento;
+import Encapsulamiento.Tiporequerimiento;
 import java.util.List;
 /**
  *
@@ -17,4 +18,5 @@ public interface InterfaceRequerimientos {
     public boolean Modificar(Requerimiento requerimiento) throws Exception;
     public boolean Eliminar(Requerimiento requerimiento) throws Exception;
     public String GetCantidad() throws Exception;
+    public List<Requerimiento> GetType(Tiporequerimiento tipoRequerimeinto) throws Exception;
 }

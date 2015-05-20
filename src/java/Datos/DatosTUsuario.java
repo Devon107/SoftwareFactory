@@ -35,7 +35,7 @@ public class DatosTUsuario implements InterfaceDatosTPersona{
     public List<Usuario> GetAll() throws Exception {
         sesion = HibernateUtil.getSessionFactory().openSession();
         Transaction transaccion = sesion.beginTransaction();
-        Query query = sesion.createQuery("From Usuario");
+        Query query = sesion.createQuery("From Usuario as U inner join fetch U.tipousuario");
         List<Usuario> listaUsuario = (List<Usuario>) query.list();
         transaccion.commit();
         sesion.close();

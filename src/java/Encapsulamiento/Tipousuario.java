@@ -1,5 +1,5 @@
 package Encapsulamiento;
-// Generated 04-15-2015 08:45:35 AM by Hibernate Tools 4.3.1
+// Generated 05-20-2015 03:06:19 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -13,6 +13,7 @@ public class Tipousuario  implements java.io.Serializable {
 
      private String idTipoUsuario;
      private String descripcion;
+     private Set detallepermisos = new HashSet(0);
      private Set usuarios = new HashSet(0);
 
     public Tipousuario() {
@@ -23,9 +24,10 @@ public class Tipousuario  implements java.io.Serializable {
         this.idTipoUsuario = idTipoUsuario;
         this.descripcion = descripcion;
     }
-    public Tipousuario(String idTipoUsuario, String descripcion, Set usuarios) {
+    public Tipousuario(String idTipoUsuario, String descripcion, Set detallepermisos, Set usuarios) {
        this.idTipoUsuario = idTipoUsuario;
        this.descripcion = descripcion;
+       this.detallepermisos = detallepermisos;
        this.usuarios = usuarios;
     }
    
@@ -42,6 +44,13 @@ public class Tipousuario  implements java.io.Serializable {
     
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+    public Set getDetallepermisos() {
+        return this.detallepermisos;
+    }
+    
+    public void setDetallepermisos(Set detallepermisos) {
+        this.detallepermisos = detallepermisos;
     }
     public Set getUsuarios() {
         return this.usuarios;

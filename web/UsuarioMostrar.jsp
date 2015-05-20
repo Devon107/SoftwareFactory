@@ -2,7 +2,7 @@
 
         <jsp:useBean id="negocioTUsuario" scope="request" class="Negocio.NegocioTUsuario" />
         <h1>Lista de Usuarios</h1>
-        <table border="1">
+        <table class="table">
             <thead>
                 <th>Usuario</th>                
                 <th>Nombre</th>
@@ -21,7 +21,7 @@
                         <td>${item.getNombre()}</td>
                         <td>${item.getApellido1()}</td>
                         <td>${item.getApellido2()}</td>
-                        <td>${item.getTipousuario().getIdTipoUsuario()}</td>
+                        <td>${item.getTipousuario().getDescripcion()}</td>
                         <td>${item.getCorreoElectronico()}</td>
                         <td>${item.getTelefono()}</td>
                         <td><input id="${item.getIdUsuario()}" type="button" onclick="editarUsuario(this.id);" value="Editar"></td>

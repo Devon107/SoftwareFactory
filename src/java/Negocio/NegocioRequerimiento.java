@@ -136,4 +136,17 @@ public class NegocioRequerimiento {
             return false;
         }
     }
+    public boolean GetType()
+    {
+        try 
+        {
+            listaRequerimiento= datosRequerimiento.GetType(requerimiento.getTiporequerimiento());
+            return true;
+        } 
+        catch (Exception e) 
+        {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
 }

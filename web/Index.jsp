@@ -17,6 +17,15 @@
             <a href="ServletTipoUsuarioRead">Mostrar Tipos Usuario</a>
         </li>
     </ul>
+        <h3>Tipos de Requerimiento</h3>
+    <ul>
+        <li>
+            <a href="ServletTipoRequerimientoInsert">Registrar Tipo Requerimiento </a>
+        </li>
+        <li>
+            <a href="ServletTipoRequerimientoRead">Mostrar Tipos Requerimiento</a>
+        </li>
+    </ul>
     <br>
     <a href="Logout.jsp">Cerrar Sesion</a>
 

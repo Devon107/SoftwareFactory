@@ -46,19 +46,7 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("<!DOCTYPE html>\r\n");
-      out.write("<html>\r\n");
-      out.write("    <head>\r\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
-      out.write("        <!-- CSS -->\r\n");
-      out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"css/bootstrap-theme.min.css\" >\r\n");
-      out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"css/bootstrap.min.css\" >\r\n");
-      out.write("        <!-- JS -->\r\n");
-      out.write("        <script src=\"js/bootstrap.min.js\"></script>\r\n");
-      out.write("        <script src=\"js/validaciones.js\"></script>\r\n");
-      out.write("        <title>JSP Page</title>\r\n");
-      out.write("    </head>\r\n");
-      out.write("    <body>\r\n");
+      out.write("\r\n");
       out.write("    <center>\r\n");
       out.write("        <h1>Inicio de Sesion</h1>\r\n");
       out.write("        <form action=\"ControlLogin\" method=\"POST\">\r\n");
@@ -68,11 +56,11 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <label for=\"txtContrasenia\">Password</label>\r\n");
       out.write("            <input type=\"password\" id=\"txtContrasenia\" name=\"txtContrasenia\" required><br><br>\r\n");
       out.write("            \r\n");
-      out.write("            <input type=\"submit\" id=\"btnSubmit\" value=\"Ingresar\" class=\"btn btn-default\">\r\n");
+      out.write("            <input type=\"submit\" id=\"btnSubmit\" value=\"Ingresar\">\r\n");
       out.write("        </form>      \r\n");
       out.write("        \r\n");
       out.write("    </center>\r\n");
-      out.write("    </body>\r\n");
+      out.write("    </body>\n");
       out.write("</html>");
       out.write('\r');
       out.write('\n');

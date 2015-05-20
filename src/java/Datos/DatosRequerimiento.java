@@ -62,7 +62,12 @@ public class DatosRequerimiento implements InterfaceRequerimientos{
 
     @Override
     public boolean Eliminar(Requerimiento requerimiento) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        sesion = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaccion = sesion.beginTransaction();
+        sesion.delete(requerimiento);
+        transaccion.commit();
+        sesion.close();
+        return true;    
     }
 
     @Override

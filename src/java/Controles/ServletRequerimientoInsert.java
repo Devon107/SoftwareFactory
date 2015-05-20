@@ -51,6 +51,7 @@ public class ServletRequerimientoInsert extends HttpServlet {
         
         if(request.getMethod().equals("POST"))
         {
+            negociorequerimiento= new NegocioRequerimiento();
             Tiporequerimiento tiporequerimiento = new Tiporequerimiento();
             tiporequerimiento.setIdTipoRequerimiento(request.getParameter("cmbTipoRequerimiento"));
             
@@ -78,7 +79,7 @@ public class ServletRequerimientoInsert extends HttpServlet {
             negociorequerimiento.getRequerimiento().setTiporequerimiento(tiporequerimiento);
             boolean retorno = negociorequerimiento.Registrar();
             
-            request.setAttribute("resultado", retorno?"Correcto":"Incorrecto");
+            request.setAttribute("Resultado", retorno?"Correcto":"Incorrecto");
             
             request.getRequestDispatcher("RequerimientoResultado.jsp").forward(request, response);
         }

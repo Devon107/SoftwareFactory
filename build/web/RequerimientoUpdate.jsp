@@ -10,9 +10,9 @@
 <jsp:useBean id="negociorequerimiento" scope="request" class="Negocio.NegocioRequerimiento" />
 <jsp:useBean id="negociotiporequerimiento" scope="request" class="Negocio.NegocioTipoRequerimiento" />
 
-<form action="ServletRequerimientoInsert" method="post">
+<form action="ServletRequerimientoUpdate" method="post">
     <label for="txtIdRequerimiento">Id</label><br>
-    <input type="text" name="txtIdRequerimiento" id="txtIdRequerimiento" readonly="" value="${negociorequerimiento.requerimiento.idRequerimiento}">
+    <input type="text" name="txtIdRequerimiento" id="txtIdRequerimiento" readonly value="${negociorequerimiento.requerimiento.idRequerimiento}">
     <label for="txtNombre">Nombre</label>
     <input type="text" id="txtNombre" name="txtNombre" required pattern="^[a-zA-ZáéíóúñÑÁÉÍÓÚ]+" value="${negociorequerimiento.requerimiento.nombre}"><br>
     <label for="txtCosto">Costo</label>

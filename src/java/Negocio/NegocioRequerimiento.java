@@ -123,4 +123,17 @@ public class NegocioRequerimiento {
             return false;
         }
     }
+    public boolean Eliminar()
+    {
+        try 
+        {
+            datosRequerimiento.Eliminar(requerimiento);
+            return true;
+        } 
+        catch (Exception e) 
+        {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
 }

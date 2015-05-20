@@ -13,19 +13,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Negocio.NegocioRequerimiento;
-import Encapsulamiento.Tiporequerimiento;
-import Negocio.NegocioTipoRequerimiento;
-import java.math.BigDecimal;
-import javax.ejb.EJB;
 /**
  *
  * @author reynaldoalfonso
  */
-@WebServlet(name = "ServletRequerimientoUpdate", urlPatterns = {"/ServletRequerimientoUpdate"})
-public class ServletRequerimientoUpdate extends HttpServlet {
-    @EJB
+@WebServlet(name = "ServletRequerimientoDelete", urlPatterns = {"/ServletRequerimientoDelete"})
+public class ServletRequerimientoDelete extends HttpServlet {
+
     private NegocioRequerimiento negociorequerimiento;
-    private NegocioTipoRequerimiento negociotiporequerimiento;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -38,33 +33,21 @@ public class ServletRequerimientoUpdate extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        if(request.getMethod().equals("GET")){
-            negociotiporequerimiento= new NegocioTipoRequerimiento();
-            negociotiporequerimiento.getAll();
-            
-            request.setAttribute("negociotiporequerimiento", negociotiporequerimiento); 
-            negociorequerimiento= new NegocioRequerimiento();
+        if(request.getMethod().equals("GET"))
+        {
+            negociorequerimiento = new NegocioRequerimiento();
             negociorequerimiento.getRequerimiento().setIdRequerimiento(request.getParameter("id"));
-            negociorequerimiento.GetById();
-            request.setAttribute("negociorequerimiento", negociorequerimiento);
-            request.getRequestDispatcher("RequerimientoUpdate.jsp").forward(request, response);
-        }
-        if(request.getMethod().equals("POST")){
-            Tiporequerimiento tipoRequerimiento= new Tiporequerimiento();
-            tipoRequerimiento.setIdTipoRequerimiento(request.getParameter("cmbTipoRequerimiento"));
-
-            BigDecimal bd= new BigDecimal(request.getParameter("txtCosto"));
-            negociorequerimiento.getRequerimiento().setIdRequerimiento(request.getParameter("txtIdRequerimiento"));
-            negociorequerimiento.getRequerimiento().setNombre(request.getParameter("txtNombre"));
-            negociorequerimiento.getRequerimiento().setCosto(bd);
-            negociorequerimiento.getRequerimiento().setHorasHombre(Integer.parseInt(request.getParameter("txtHorasHombre")));
-            negociorequerimiento.getRequerimiento().setDescripcion(request.getParameter("txtDescripcion"));
-            negociorequerimiento.getRequerimiento().setTiporequerimiento(tipoRequerimiento);
             
-            boolean retorno = negociorequerimiento.update();
-            request.setAttribute("Resultado", retorno?"Correcto":"Incorrecto");
-            request.getRequestDispatcher("RequerimientoResultado.jsp").forward(request, response);
-         }
+            negociorequerimiento.GetById();
+            
+            negociorequerimiento.Eliminar();
+            
+            negociorequerimiento.GetAll();
+        
+            request.setAttribute("negociorequerimiento", negociorequerimiento);
+
+            request.getRequestDispatcher("RequerimientoRead.jsp").forward(request, response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
